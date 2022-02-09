@@ -54,3 +54,5 @@ go.work
 
 # End of https://www.toptal.com/developers/gitignore/api/goland+all,go,visualstudiocode
 n
+target
+scr-webhookd
