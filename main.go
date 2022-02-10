@@ -1,6 +1,7 @@
 package main
 
 import (
+	_ "github.com/dhaanpaa-lab0/scr-webhookd/config"
 	"github.com/gofiber/fiber/v2"
 )
 

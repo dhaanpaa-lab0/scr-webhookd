@@ -56,3 +56,4 @@ go.work
 n
 target
 scr-webhookd
+webhookd_config.yaml
