@@ -1,22 +1,18 @@
 package main
 
 import (
-	"io/ioutil"
-	"log"
-	"os"
+	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
-	file, err := ioutil.TempFile("", "webd")
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Println(file.Name())
-	defer func(name string) {
-		err := os.Remove(name)
-		if err != nil {
-			log.Fatal(err)
-		}
-	}(file.Name())
+	app := fiber.New()
 
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.JSON(fiber.Map{"message": "Hello World"})
+	})
+
+	err := app.Listen(":3001")
+	if err != nil {
+		return
+	}
 }
