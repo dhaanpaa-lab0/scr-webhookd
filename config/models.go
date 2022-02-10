@@ -38,6 +38,8 @@ func init() {
 	viper.AddConfigPath(path.Join(GetUserHome(), ".webhookd"))
 	viper.AddConfigPath(GetCurrentDir())
 	viper.SetConfigName("webhookd_config")
+	viper.SetDefault("system_root", ".")
+	viper.SetDefault("listen_address", ":3002")
 	viper.SetConfigType("yaml")
 	err := viper.ReadInConfig() // Find and read the config file
 	if err != nil {             // Handle errors reading the config file
