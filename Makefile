@@ -11,6 +11,9 @@ all: clean
 clean:
 	rm -rfv target/
 
+reset:
+	rm -rfv test/
+
 release: $(PLATFORMS)
 
 $(PLATFORMS): clean
