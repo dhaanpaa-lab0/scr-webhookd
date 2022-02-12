@@ -98,7 +98,7 @@ func ExecScript(scriptkey string, postedFileName string) string {
 
 		cmdOutput, errCmdExecScriptOutput := cmdExecScript.Output()
 		if errCmdExecScriptOutput != nil {
-			log.Fatal(errCmdExecScriptOutput)
+			log.Fatal("ExecError:" + errCmdExecScriptOutput.Error())
 			return ""
 		} else {
 			cmdOutputString := string(cmdOutput)
